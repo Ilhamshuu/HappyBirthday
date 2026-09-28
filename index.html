@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Bybyy ❤️!</title>
+
+  <!-- This script pulls in Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- These are for the animations and photo gallery -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+
+  <!-- Google Fonts for the Anime look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Link to your new external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- IMPORTANT: Replace with a real image link after you upload it -->
+  <meta property="og:image" content="https://placehold.co/1200x630/87CEEB/FFFFFF?text=A+Surprise+For+[Name]">
+</head>
+<body>
+<!-- Canvas for the falling cherry blossoms -->
+<canvas id="sakura-canvas"></canvas>
+
+<!-- Section 1: Hero Welcome -->
+<header class="h-screen relative flex items-center justify-center text-white overflow-hidden">
+  <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+    <source src="img/Vid_Home.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</header>
+
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <div class="text-center z-10 p-4" data-aos="fade-in" data-aos-duration="1500">
+    <h1 class="text-5xl md:text-7xl font-anime drop-shadow-lg">Happy Birthday, Bybyy ❤️ - Cie 25 tahun!</h1>
+    <p class="mt-4 text-xl font-semibold">Celebrating a wonderful journey of most beautiful person in the worldd..</p>
+    <div id="countdown" class="mt-6 text-2xl font-semibold tracking-widest leading-relaxed"></div>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="container mx-auto p-6 md:p-12">
+
+  <!-- Section 2: A Letter For You (in an envelope) -->
+  <section id="letter-section" class="my-16 md:my-24 max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-anime text-sakura mb-8 drop-shadow-sm">A Special Message For My Luv</h2>
+
+    <div id="envelope-wrap" class="envelope-wrap">
+      <!-- The Envelope (click to open) -->
+      <div id="envelope" class="envelope" role="button" tabindex="0" aria-label="Buka surat">
+        <div class="envelope-flap"></div>
+        <div class="envelope-body">
+          <span class="font-anime text-2xl md:text-3xl text-white drop-shadow">Klik buat buka surat 💌</span>
+          <span class="mt-2 text-sm text-white/90">dari pacarmu yang ganteng, ditulis dari hati</span>
+        </div>
+      </div>
+
+      <!-- The Letter (grows open when the envelope is clicked) -->
+      <div id="letter" class="letter text-left text-lg leading-relaxed space-y-4 bg-white p-8 rounded-lg shadow-lg">
+        <p>Hey Bub,Gimana rasanya nambah usia?</p>
+        <p>Gak kerasa ya udah berjalan 25 tahun hidupmu. Gak mudah sampe sini tapi you did it good. Tentunya aku jadi salah satu orang yang terus ngikutin or keep up with your life, naik turun nya kehidupan kamu secara gak langsung aku juga ngerasain, darisana aku tau kamu itu wanita yang hebat..bersyukur banget ketemu kamu. One of the most grateful moment in my life. </p>
+        <p>Thankyou for always being so kind, You always be yourself, i am not in city of gems still i found a real gem. Semoga semua yang kamu cita-citakan bisa tercapai, dan aku yakin akan tercapai cuma masalah waktu aja. Kalau udah serius kamu orangnya bakal lakuin apapun, yang cukup sulit itu muncul niat serius itu wkwk. Dan semoga aku bisa terus ada cybersana buat liat momen-momen itu. </p>
+        <p class="text-right mt-8">Regards, Your BF 💖</p>
+      </div>
+    </div>
+
+    <button id="replay-letter" type="button" class="replay-btn">🔁 baca ulang</button>
+    <p class="mt-2 text-xs text-slate-400">(musiknya bisa dinyalain di pojok kanan bawah yaa)</p>
+  </section>
+
+  <!-- Section 3: The Timeline -->
+  <section class="my-16 md:my-24">
+    <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">Foto-foto kitaa</h2>
+    <div class="space-y-16">
+      <!-- Timeline Item 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-right">
+        <!-- TODO: Replace with your photo -->
+        <img src="img/Us (4).jpeg" alt="Add photo 1" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white"> <!--replce img1.png with name of your img-->
+        <div class="text-center md:text-left">
+          <!-- TODO: Customize the date and story -->
+          <h3 class="text-2xl font-anime text-sakura">Jaman Nganggur</h3>
+          <p class="mt-2 text-lg">Inget ga, ini pas kita lagi di cafe bento nangor, waktu ngerjain projek TNGC nya prince? CMIW. Kupasang karena muka kita masih imut2</p>
+            <br>
+        </div>
+      </div>
+      <!-- Timeline Item 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8" data-aos="fade-left">
+        <!-- TODO: Replace with your photo -->
+        <img src="img/Us (5).jpeg" alt="Add photo 2" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white">
+        <div class="text-center md:text-right">
+          <!-- TODO: Customize the date and story -->
+          <h3 class="text-2xl font-anime text-sakura">Lembang Date</h3>
+          <p class="mt-2 text-lg">Pas kita maen ke Farmhouse, kupasang karena lucu aja. Paling inget sama ayam jeruknya itu pas kita ke kafe apa ya namanya, enak banget. Pokonya itu malem2 ada orang yg prewed inget ga wkwk.</p>
+         <br>
+        </div>
+      </div>
+      <!-- Timeline Item 3 (NEW) -->
+      <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-right">
+        <img src="img/Us (1).jpeg" alt="Add photo 3" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white">
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-anime text-sakura">Photobooth yang bagus</h3>
+          <p class="mt-2 text-lg">Aku masukin karena ini series foto kita yang bagus wkwk, i think this is the best Photobooth we've ever done?</p>
+         <br>
+        </div>
+      </div>
+      <!-- Timeline Item 4 (NEW) -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8" data-aos="fade-left">
+        <img src="img/Us (3).jpeg" alt="Add photo4" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white">
+        <div class="text-center md:text-right">
+          <h3 class="text-2xl font-anime text-sakura">Kondangan kemaren</h3>
+          <p class="mt-2 text-lg">Lucu aja, jadi kumasukin. Moga dipermudah jalan buat nyusul wkwk</p>
+            <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Your Favourite Photos of your loved Ones (NEW SECTION) -->
+  <section class="my-16 md:my-24">
+    <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">Best Favorite Foto Bibi My Version</h2>
+    <div class="relative">
+      <!-- Scroll Buttons -->
+      <button id="scroll-left-btn" class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-opacity opacity-0 md:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sakura" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+      </button>
+      <button id="scroll-right-btn" class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white rounded-full p-2 shadow-md transition-opacity opacity-0 md:opacity-100">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sakura" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+      </button>
+
+      <!-- Scrollable Container -->
+      <div id="hall-of-fame-scroller" class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide p-4 -mx-4">
+        <div class="flex snap-x snap-mandatory gap-8">
+          <!--  Card 1 -->
+          <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up" data-aos-delay="100">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full">
+              <img src="img/Bibi_Solo (8).jpeg" alt="Photo 1" class="w-full h-80 object-cover rounded-md mb-4"> 
+              <h3 class="text-2xl font-anime text-sakura">Best 1</h3>
+              <p class="mt-2">"Aura cantiknya awur-awuran gilaa gak kuattt”"</p>
+            </div>
+          </div>
+          <!--  Card 2 -->
+          <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up" data-aos-delay="200">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full">
+              <img src="img/Bibi_Solo (15).jpeg" alt="Photo 2" class="w-full h-80 object-cover rounded-md mb-4">
+              <h3 class="text-2xl font-anime text-sakura">Best 2</h3>
+              <p class="mt-2">"Ini feels natural banget, kek pengen nanya "rasanya sakit ga jatuh dari surga?"</p>
+            </div>
+          </div>
+          <!--  Card 3 -->
+          <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up" data-aos-delay="300">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full">
+              <img src="img/Bibi_Solo (2).jpeg" alt="Photo 3" class="w-full h-80 object-cover rounded-md mb-4">
+              <h3 class="text-2xl font-anime text-sakura">Best 3</h3>
+              <p class="mt-2">"No words, just full of cuteness"</p>
+            </div>
+          </div>
+          <!--  Card 4 -->
+          <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up" data-aos-delay="400">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full">
+              <img src="img/Bibi_Solo (16).jpeg" alt="Photo 4" class="w-full h-80 object-cover rounded-md mb-4">
+              <h3 class="text-2xl font-anime text-sakura">Best 4</h3>
+              <p class="mt-2">"Kece parah, seakan bilang "Mana yang susah sini kakak ajarin, aaa💕"</p>
+            </div>
+          </div>
+          <!--  Card 5 -->
+          <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up" data-aos-delay="500">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full">
+              <img src="img/Bibi_Solo (10).jpeg" alt="Photo 5" class="w-full h-80 object-cover rounded-md mb-4">
+              <h3 class="text-2xl font-anime text-sakura">Best 5</h3>
+              <p class="mt-2">"Cute, jadi inget capybara"</p>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div class="snap-center flex-shrink-0 w-10/12 sm:w-1/2 md:w-1/3 lg:w-1/4" data-aos="fade-up" data-aos-delay="600">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center h-full">
+              <img src="img/Bibi_Solo (14).jpeg" alt="Photo 6" class="w-full h-80 object-cover rounded-md mb-4">
+              <h3 class="text-2xl font-anime text-sakura">Best 6</h3>
+              <p class="mt-2">"Mungkin harusnya ini masuk top 3, tapi kek yg lain juga baguss..kalo bisa semua nya nomor 1 euy tapi bilangan kan gak cuma 1 ya hiks. Foto ini vibesnya kek kaka2 influencer idola"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: The Gallery -->
+  <section class="my-16 md:my-24">
+    <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">Byby Gallery</h2>
+    <p class="text-center text-lg -mt-8 mb-12">(Other Best Photoo)</p>
+    <div id="lightgallery" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <a href="img/Bibi_Solo (1).jpeg" data-aos="zoom-in" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (1).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 1">
+      </a>
+      <a href="img/Bibi_Solo (3).jpeg" data-aos="zoom-in" data-aos-delay="100" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (3).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 2">
+      </a>
+      <a href="img/Bibi_Solo (5).jpeg" data-aos="zoom-in" data-aos-delay="200" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (5).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 3">
+      </a>
+      <a href="img/Bibi_Solo (9).jpeg" data-aos="zoom-in" data-aos-delay="300" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (9).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 4">
+      </a>
+      <!-- Second Row of Photos -->
+      <a href="img/Bibi_Solo (11).jpeg" data-aos="zoom-in" data-aos-delay="400" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (11).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 5">
+      </a>
+      <a href="img/Bibi_Solo (12).jpeg" data-aos="zoom-in" data-aos-delay="500" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (12).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 6">
+      </a>
+      <a href="img/Bibi_Solo (13).jpeg" data-aos="zoom-in" data-aos-delay="600" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (13).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 7">
+      </a>
+      <a href="img/Bibi_Solo (6).jpeg" data-aos="zoom-in" data-aos-delay="700" class="block w-full h-48 md:h-64">
+        <img src="img/Bibi_Solo (6).jpeg" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 w-full h-full object-cover border-4 border-white" alt="Memory 8">
+      </a>
+    </div>
+  </section>
+
+    <!-- Section 6: Finale -->
+    <section class="my-16 md:my-24" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-anime text-center mb-4">Happy Birthday Bibiii 😚, Belom beres, klik section di bawah ya</h2>
+        <div class="max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden bg-navy">
+    </section>
+
+    <!-- Section 7: The Gift Question -->
+    <section id="gift-question" class="my-16 md:my-24 px-2" data-aos="fade-up">
+        <h2 class="text-3xl md:text-4xl font-anime text-center mb-8 text-sakura">SATU PERTANYAAN PENTING BIBI.. 🥺</h2>
+        <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl p-6 sm:p-8 md:p-10 text-center relative overflow-hidden">
+            <p class="text-base md:text-xl leading-relaxed mb-10">
+                "Aku pengen ngasih kado, tapi jujur bingung dari kemaren mikir apa kado utamanya.
+                Mau beli, takut gak kepake, jadi weekend nanti kita langsung belanja aja ya?
+                Mau ke Botas, BTM atau apapun, boleeeeh~"
+            </p>
+
+            <div id="gift-buttons" class="relative h-40 sm:h-44">
+                <button id="btn-yes" type="button" class="gift-btn absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white text-base sm:text-lg md:text-2xl px-5 sm:px-7 py-3 rounded-full shadow-lg z-10">
+                    Iya bolehhhh 🥰
+                </button>
+                <button id="btn-no" type="button" class="gift-btn absolute bg-slate-300 hover:bg-slate-400 text-slate-700 text-base sm:text-lg md:text-2xl px-5 sm:px-7 py-3 rounded-full shadow-lg">
+                    Gamaaauuu 😤
+                </button>
+            </div>
+
+            <p id="no-hint" class="mt-4 text-sm text-slate-400 opacity-0 transition-opacity">"Klik salah satu jawaban yaa, nanti bakal muncul respon 🥰"</p>
+
+            <div id="gift-thanks" class="hidden">
+                <p class="text-3xl md:text-5xl font-anime text-sakura pop-in">YEE MAKASIH SAYANG!! 🥰💖</p>
+                <p class="mt-4 text-lg">Weekend nanti kita belanja bareng yaa, Hehee.. 🛍️💕</p>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-navy text-white p-8 text-center">
+  <p>Wish You All The Bestt.</p>
+  <p class="text-sm opacity-70 mt-2">Semoga Sukaa</p>
+</footer>
+
+<!-- Musik latar: taruh file lagunya di audio/bg-music.mp3 -->
+<audio id="bg-music" src="audio/bg-music.mp3" loop preload="none"></audio>
+<button id="music-toggle" type="button" class="music-btn" aria-label="Putar musik">
+  <span id="music-icon" class="music-icon">♪</span>
+  <span class="music-label hidden sm:inline">Musik</span>
+</button>
+<div id="toast" class="toast"></div>
+
+<!-- These scripts are for the animations and photo gallery -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+
+<!-- Link to your new external JavaScript file -->
+<script src="script.js"></script>
+</body>
+</html>
